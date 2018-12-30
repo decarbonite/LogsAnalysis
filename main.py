@@ -17,9 +17,8 @@ def main():
 
     print('\nErrors of more than 1 percent:-\n')
 
-    for count in third_query():
-        print(str(count))
-        #print("{} - {:.2f}% errors".format(str(title), round((float(count) * 100), 2)))
+    for title, count in third_query():
+        print("{} - {:.2f}% errors".format(str(title), round((float(count) * 100), 2)))
 
 
 if __name__ == '__main__':
