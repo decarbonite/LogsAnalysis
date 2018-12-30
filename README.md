@@ -10,8 +10,18 @@ The query statements were done one for each question.
 
 ## How to Run
 
-You have to be in the same directory level as main.py and new.db in Vagrant virtual machine. Then type:
+First you need to populate your database with the data given in `newsdata.sql`.
+You have to be in the same directory level as newsdata.sql in Vagrant virtual machine terminal. Then type:
+
+```bash
+psql -d news -f newsdata.sql
+```
+Which creates a database called `news` populated by the data of `newsdata.sql`
+
+You have to be in the same directory level as main.py and newsdb.py in Vagrant virtual machine. Then type:
 
 ```bash
 python main.py
 ```
+
+to run the program.
