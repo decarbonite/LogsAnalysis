@@ -11,7 +11,10 @@ def connect():
     except psycopg2.DatabaseError as e:
         print(e)
 
-
+'''This method answers the following question :-
+What are the most popular three articles of all time?
+Which articles have been accessed the most? 
+'''
 def first_query():
     db, c = connect()
     c.execute("SELECT title, COUNT(path) as views FROM articles "
@@ -22,7 +25,13 @@ def first_query():
     db.close()
     return posts
 
-
+'''
+This method answers the following question :-
+Who are the most popular article authors of all time? 
+That is, when you sum up all of the articles each author has written,
+which authors get the most page views? 
+Present this as a sorted list with the most popular author at the top
+'''
 def second_query():
     db, c = connect()
     c.execute("SELECT name, COUNT(path) as views "
@@ -35,7 +44,10 @@ def second_query():
     db.close()
     return posts
 
-
+'''
+This method answers the following question :-
+On which days did more than 1% of requests lead to errors?
+'''
 def third_query():
     db, c = connect()
     c.execute("WITH refined AS "
